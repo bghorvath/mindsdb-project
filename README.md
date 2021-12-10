@@ -1,1 +1,1 @@
-# mindsdb-project
+## Trying out MindsDB with a simple movie review dataset and a baseline sentiment analysis model

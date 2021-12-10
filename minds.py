@@ -1,21 +1,18 @@
 # %%
 
-import pandas as pd
-import mindsdb
+import json
 import os
-import requests
+
+import numpy as np
+import pandas as pd
+
+import mindsdb
 import pymongo
 
 # %%
 
-imdb_url = "http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
+with open("data/imdb_reviews.json","r") as f:
+    data = json.load(f)
 
-save_filename = "aclImdb_v1.tar.gz"
-if not os.path.exists(save_filename):
-    requests.urlretrieve(imdb_url, save_filename)
-
-imdb_folder = "aclImdb"
-if not os.path.exists(imdb_folder):
-    with tarfile.open(save_filename) as tar:
-        tar.extractall()
+# %%
 
